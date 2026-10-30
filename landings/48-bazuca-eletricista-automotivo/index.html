@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bazuca Eletricista Automotivo — Auto elétrica em salvador</title>
+  <meta name="description" content="Bazuca Eletricista Automotivo. Partida, alternador, injeção eletrônica e sistemas elétricos com atendimento rápido e confiável. 4.7★ no Google Maps · 264 avaliações.">
+  <style>
+    :root {
+      --ink: #101828;
+      --muted: #667085;
+      --line: #e4e7ec;
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --accent: #0f766e;
+      --accent-2: #134e4a;
+      --warm: #f59e0b;
+      --soft: #ecfdf5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Georgia, system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.93), rgba(19, 78, 74, 0.9)),
+        #0f766e;
+      color: #fff;
+      padding: 3.5rem 0 4rem;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.9fr;
+      gap: 2rem;
+      align-items: end;
+    }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      max-width: 16ch;
+    }
+    .hero-lead {
+      font-size: 1.12rem;
+      opacity: 0.92;
+      max-width: 40ch;
+      margin-bottom: 0.75rem;
+    }
+    .hero-sub {
+      font-size: 0.98rem;
+      opacity: 0.82;
+      max-width: 42ch;
+      margin-bottom: 1.25rem;
+    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.5rem; }
+    .pill {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.88rem;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.4rem; padding: 0.9rem 1.2rem; border-radius: 12px;
+      font-weight: 700; text-decoration: none; border: none; cursor: pointer;
+      font-size: 0.98rem; transition: transform 0.15s;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-light { background: #fff; color: var(--accent-2); }
+    .btn-outline { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.35); }
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      padding: 1.4rem;
+    }
+    .hero-card h2 { font-size: 1.1rem; margin-bottom: 0.85rem; }
+    .hero-card label { display: block; font-size: 0.78rem; opacity: 0.8; margin-bottom: 0.3rem; }
+    .hero-card input, .hero-card textarea {
+      width: 100%; border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.15); color: #fff; border-radius: 10px;
+      padding: 0.7rem 0.85rem; margin-bottom: 0.75rem; font: inherit;
+    }
+    .hero-card input::placeholder, .hero-card textarea::placeholder { color: rgba(255,255,255,0.55); }
+    .hero-card .btn-light { width: 100%; }
+    section { padding: 3rem 0; }
+    .section-title { font-size: 1.55rem; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .section-sub { color: var(--muted); margin-bottom: 1.4rem; max-width: 52ch; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .grid-2 { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 1.25rem; }
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 16px; padding: 1.25rem;
+      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+    }
+    .stat .value { font-size: 1.8rem; font-weight: 800; color: var(--accent); letter-spacing: -0.03em; }
+    .stat .label { color: var(--muted); font-size: 0.9rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+    .chip {
+      background: var(--soft); color: var(--accent-2); border: 1px solid #99f6e4;
+      border-radius: 999px; padding: 0.45rem 0.85rem; font-size: 0.88rem; font-weight: 600;
+    }
+    .chip-neutral { background: #f2f4f7; color: #344054; border-color: var(--line); }
+    .brand-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 0.7rem;
+    }
+    .brand {
+      background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+      padding: 0.9rem 0.6rem; text-align: center; font-weight: 700; font-size: 0.92rem;
+    }
+    .beneficios { display: grid; gap: 0.75rem; }
+    .beneficio {
+      display: flex; gap: 0.7rem; align-items: flex-start;
+      padding: 0.85rem 1rem; border: 1px solid var(--line);
+      border-radius: 12px; background: #fff;
+    }
+    .beneficio i {
+      width: 28px; height: 28px; border-radius: 8px; background: var(--soft);
+      color: var(--accent); display: inline-flex; align-items: center; justify-content: center;
+      font-style: normal; font-weight: 800; flex-shrink: 0;
+    }
+    .info-list { display: grid; gap: 0.85rem; }
+    .info-item span { display: block; color: var(--muted); font-size: 0.8rem; margin-bottom: 0.15rem; }
+    .info-item strong { font-size: 0.98rem; font-weight: 600; }
+    .cta-band {
+      background: var(--accent-2); color: #fff; border-radius: 20px;
+      padding: 2rem; display: flex; flex-wrap: wrap; gap: 1rem;
+      align-items: center; justify-content: space-between;
+    }
+    .cta-band h2 { font-size: 1.4rem; margin-bottom: 0.35rem; }
+    .cta-band p { opacity: 0.85; max-width: 40ch; }
+    footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.8rem; text-align: center; }
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      h1 { max-width: none; }
+      .hero { padding: 2.5rem 0 2.75rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Auto elétrica · salvador/BA</div>
+        <h1>Bazuca Eletricista Automotivo</h1>
+        <p class="hero-lead">Auto elétrica com diagnóstico preciso em salvador</p>
+        <p class="hero-sub">Partida, alternador, injeção eletrônica e sistemas elétricos com atendimento rápido e confiável.</p>
+
+        <div class="hero-meta">
+          
+            <div class="pill"><strong>★ 4.7</strong> · 264 avaliações</div>
+          
+          <div class="pill">4.7★ no Google Maps · 264 avaliações</div>
+        </div>
+
+        <div class="actions">
+          
+            <a class="btn btn-light" href="https://wa.me/5507133350319" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+          
+          
+            <a class="btn btn-outline" href="tel:07133350319">Ligar · (071) 3335-0319</a>
+          
+          
+            <a class="btn btn-outline" href="https://www.google.com/maps/place/Bazuca+Eletricista+Automotivo/data=!4m7!3m6!1s0x71604aec875d631:0x19c76c47250ef931!8m2!3d-12.9948319!4d-38.5080938!16s%2Fg%2F1tnl1lj9!19sChIJMdZ1yK4EFgcRMfkOJUdsxxk" target="_blank" rel="noopener">Ver no Maps</a>
+          
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h2>Resolva a elétrica do seu veículo</h2>
+        <form onsubmit="event.preventDefault(); alert('Demonstração: formulário pronto para integração com WhatsApp/CRM.');">
+          <label for="nome_cliente">Seu nome</label>
+          <input id="nome_cliente" name="nome" type="text" placeholder="Como podemos te chamar?" required>
+
+          <label for="telefone_cliente">WhatsApp</label>
+          <input id="telefone_cliente" name="telefone" type="tel" placeholder="(00) 00000-0000" required>
+
+          <label for="mensagem">O que você precisa?</label>
+          <textarea id="mensagem" name="mensagem" rows="3" placeholder="Ex.: bateria, falha elétrica, scanner..."></textarea>
+
+          <button type="submit" class="btn btn-light">Quero ser atendido</button>
+        </form>
+      </aside>
+    </div>
+  </header>
+
+  
+  <section>
+    <div class="wrap grid-3">
+      <div class="card stat">
+        <div class="value">4.7★</div>
+        <div class="label">Nota no Google</div>
+      </div>
+      <div class="card stat">
+        <div class="value">264</div>
+        <div class="label">Avaliações</div>
+      </div>
+      <div class="card stat">
+        <div class="value">salvador</div>
+        <div class="label">Atendimento na região</div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <h2 class="section-title">Serviços em destaque</h2>
+      <p class="section-sub">Soluções alinhadas ao segmento de Auto elétrica.</p>
+      <div class="chips">
+        
+          <span class="chip">Bateria e partida</span>
+        
+          <span class="chip">Alternador e motor de arranque</span>
+        
+          <span class="chip">Injeção eletrônica</span>
+        
+          <span class="chip">Sensoriamento e scanner</span>
+        
+          <span class="chip">Instalação de acessórios</span>
+        
+          <span class="chip">Faróis e iluminação</span>
+        
+          <span class="chip">Alarmes e som automotivo</span>
+        
+          <span class="chip">Elétrica geral</span>
+        
+      </div>
+    </div>
+  </section>
+
+  
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <h2 class="section-title">Marcas atendidas</h2>
+      <p class="section-sub">Atendimento preparado para as principais marcas do mercado.</p>
+      <div class="brand-grid">
+        
+          <div class="brand">Fiat</div>
+        
+          <div class="brand">Volkswagen</div>
+        
+          <div class="brand">Chevrolet</div>
+        
+          <div class="brand">Ford</div>
+        
+          <div class="brand">Toyota</div>
+        
+          <div class="brand">Honda</div>
+        
+          <div class="brand">Hyundai</div>
+        
+          <div class="brand">Renault</div>
+        
+          <div class="brand">Nissan</div>
+        
+          <div class="brand">Jeep</div>
+        
+      </div>
+    </div>
+  </section>
+  
+
+  <section style="padding-top:0;">
+    <div class="wrap grid-2">
+      <div>
+        <h2 class="section-title">Por que escolher a Bazuca Eletricista Automotivo</h2>
+        <p class="section-sub">Diferenciais pensados para gerar confiança e resultado.</p>
+        <div class="beneficios">
+          
+            <div class="beneficio">
+              <i>✓</i>
+              <div>Diagnóstico eletrônico completo</div>
+            </div>
+          
+            <div class="beneficio">
+              <i>✓</i>
+              <div>Peças elétricas com procedência</div>
+            </div>
+          
+            <div class="beneficio">
+              <i>✓</i>
+              <div>Atendimento ágil para emergências</div>
+            </div>
+          
+            <div class="beneficio">
+              <i>✓</i>
+              <div>Técnicos experientes em várias marcas</div>
+            </div>
+          
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title" style="font-size:1.2rem;">Informações de contato</h2>
+        <div class="info-list" style="margin-top:1rem;">
+          
+            <div class="info-item"><span>Endereço</span><strong>Rua Mãe Menininha do Gantois, 125 - Federação, Salvador - BA, 40215-150</strong></div>
+          
+          
+            <div class="info-item"><span>Telefone</span><strong>(071) 3335-0319</strong></div>
+          
+          <div class="info-item"><span>Categoria</span><strong>Auto elétrica</strong></div>
+          
+            <div class="info-item"><span>Cidade</span><strong>salvador / BA</strong></div>
+          
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Resolva a elétrica do seu veículo</h2>
+          <p>Fale agora com a equipe de Bazuca Eletricista Automotivo e resolva sua necessidade com agilidade.</p>
+        </div>
+        <div class="actions">
+          
+            <a class="btn btn-light" href="https://wa.me/5507133350319" target="_blank" rel="noopener">WhatsApp</a>
+          
+          
+            <a class="btn btn-outline" href="tel:07133350319">Ligar</a>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      Proposta de landing page · segmento auto_eletrica · dados da empresa + conteúdo de apresentação
+    </div>
+  </footer>
+</body>
+</html>

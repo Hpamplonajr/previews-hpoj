@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio de beleza RR · São Paulo</title>
+  <meta name="description" content="Studio de beleza RR. Salão especializado.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0a09; --surface: #171412; --ink: #faf6f1;
+      --muted: #b7a99a; --accent: #d4a373; --accent-2: #c08457;
+      --soft: #2a221c; --hero-from: #1a1410; --hero-to: #3b2a1f;
+      --font-d: Cormorant Garamond, Georgia, serif; --font-b: Outfit, Segoe UI, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-b); background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem; }
+    .nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+    }
+    .brand { font-family: var(--font-d); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; }
+    .nav-cta {
+      background: var(--accent); color: #fff; padding: 0.55rem 1rem;
+      border-radius: 999px; font-weight: 700; font-size: 0.9rem;
+    }
+    .hero {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2rem;
+      padding: 3.5rem 0 3rem; align-items: center;
+    }
+    .eyebrow {
+      display: inline-block; font-size: 0.78rem; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 0.85rem;
+    }
+    h1 {
+      font-family: var(--font-d); font-size: clamp(2.4rem, 5vw, 3.6rem);
+      line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 0.85rem; max-width: 12ch;
+    }
+    .lead { color: var(--muted); font-size: 1.1rem; max-width: 38ch; margin-bottom: 1.4rem; }
+    .pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .pill {
+      background: var(--soft); color: var(--accent-2); border-radius: 999px;
+      padding: 0.35rem 0.8rem; font-size: 0.85rem; font-weight: 600;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.9rem 1.25rem; border-radius: 12px; font-weight: 700; border: none; cursor: pointer;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost { background: transparent; border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); color: var(--ink); }
+    .hero-card {
+      background: linear-gradient(160deg, var(--hero-from), var(--hero-to));
+      color: #fff; border-radius: 22px; padding: 1.6rem; box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+    }
+    .hero-card h2 { font-family: var(--font-d); font-size: 1.35rem; margin-bottom: 0.85rem; }
+    .hero-card label { display: block; font-size: 0.78rem; opacity: 0.85; margin-bottom: 0.3rem; }
+    .hero-card input, .hero-card textarea {
+      width: 100%; border: 1px solid rgba(255,255,255,0.25); background: rgba(0,0,0,0.18);
+      color: #fff; border-radius: 10px; padding: 0.7rem 0.85rem; margin-bottom: 0.75rem; font: inherit;
+    }
+    .hero-card .btn-primary { width: 100%; background: #fff; color: var(--accent-2); }
+    section { padding: 3rem 0; }
+    .section-title { font-family: var(--font-d); font-size: 1.8rem; margin-bottom: 0.4rem; letter-spacing: -0.02em; }
+    .section-sub { color: var(--muted); margin-bottom: 1.4rem; max-width: 48ch; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .card {
+      background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+      border-radius: 16px; padding: 1.2rem;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .chip {
+      background: var(--soft); color: var(--accent-2); border-radius: 999px;
+      padding: 0.45rem 0.85rem; font-size: 0.88rem; font-weight: 600;
+    }
+    .quote { font-size: 1rem; color: var(--muted); margin-bottom: 0.7rem; }
+    .author { font-weight: 700; font-size: 0.9rem; }
+    .cta-band {
+      background: linear-gradient(120deg, var(--hero-from), var(--hero-to));
+      color: #fff; border-radius: 20px; padding: 2rem;
+      display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+    }
+    .hero-photo {
+      border-radius: 22px; overflow: hidden; min-height: 320px;
+      background: linear-gradient(160deg, var(--hero-from), var(--hero-to));
+      box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+    }
+    .hero-photo img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block; }
+    .gallery {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1.2rem;
+    }
+    .gallery img {
+      width: 100%; height: 160px; object-fit: cover; border-radius: 14px;
+      border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+    }
+    footer { padding: 1.5rem 0 2.5rem; color: var(--muted); font-size: 0.8rem; text-align: center; }
+    @media (max-width: 900px) {
+      .hero, .grid-3, .gallery { grid-template-columns: 1fr; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">Studio de beleza RR</div>
+      
+        <a class="nav-cta" href="https://wa.me/5511999998888" target="_blank" rel="noopener">WhatsApp</a>
+      
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Salão de beleza · São Paulo</div>
+        <h1>Studio de beleza RR</h1>
+        <p class="lead">Beleza e cuidado com o seu estilo em São Paulo</p>
+        <p class="lead" style="font-size:0.98rem;">Salão especializado.</p>
+        <div class="pills">
+          <span class="pill">4.8★ no Google · 120 avaliações</span>
+          <span class="pill">São Paulo / SP</span>
+          <span class="pill">Fecha às 19:00</span>
+        </div>
+        <div class="actions">
+          
+            <a class="btn btn-primary" href="https://wa.me/5511999998888" target="_blank" rel="noopener">Reserve seu horário</a>
+          
+          
+            <a class="btn btn-ghost" href="tel:11999998888">Ligar · (11) 99999-8888</a>
+          
+        </div>
+      </div>
+      
+        <div class="hero-photo">
+          <img src="assets/foto-01.jpg" alt="Studio de beleza RR" loading="eager">
+        </div>
+      
+    </section>
+
+    <section>
+      <h2 class="section-title">Serviços</h2>
+      <p class="section-sub">Soluções pensadas para o dia a dia do seu negócio.</p>
+      <div class="chips">
+        <span class="chip">Corte</span><span class="chip">Coloração</span><span class="chip">Escova</span>
+      </div>
+    </section>
+
+    
+
+    
+    <section style="padding-top:0;">
+      <h2 class="section-title">Ambiente</h2>
+      <div class="gallery">
+        
+          <img src="assets/foto-01.jpg" alt="Studio de beleza RR" loading="lazy">
+        
+          <img src="assets/foto-02.jpg" alt="Studio de beleza RR" loading="lazy">
+        
+      </div>
+    </section>
+    
+
+    <section style="padding-top:0;">
+      <h2 class="section-title">O que os clientes dizem</h2>
+      <div class="grid-3" style="margin-top:1.2rem;">
+        
+          <article class="card">
+            <p class="quote">“Atendimento excelente, saí muito satisfeita com o resultado do corte e coloração.”</p>
+            <div class="author">Ana · Google</div>
+          </article>
+        
+          <article class="card">
+            <p class="quote">“Ambiente limpo e profissionais cuidadosos. Recomendo demais o lugar para todos.”</p>
+            <div class="author">Bruno · Google</div>
+          </article>
+        
+          <article class="card">
+            <p class="quote">“Fiz luzes e adorei. Voltarei com certeza na próxima visita ao salão.”</p>
+            <div class="author">Carla · Google</div>
+          </article>
+        
+      </div>
+    </section>
+
+    <section style="padding-top:0;">
+      <div class="cta-band">
+        <div>
+          <h2 style="font-family:var(--font-d);font-size:1.5rem;margin-bottom:0.35rem;">Reserve seu horário</h2>
+          <p style="opacity:0.88;max-width:40ch;">Fale com a equipe de Studio de beleza RR e resolva hoje.</p>
+        </div>
+        <div class="actions">
+          
+            <a class="btn" style="background:#fff;color:var(--accent-2);" href="https://wa.me/5511999998888" target="_blank" rel="noopener">WhatsApp</a>
+          
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Studio de beleza RR · Rua Teste, 100
+      <br>(11) 99999-8888
+    </footer>
+  </div>
+</body>
+</html>
