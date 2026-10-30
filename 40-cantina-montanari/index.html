@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cantina Montanari · salvador</title>
+  <meta name="description" content="Cantina Montanari. Cardápio cuidado, atendimento atencioso e o ponto certo para suas refeições e encontros.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #faf7f2; --surface: #ffffff; --ink: #1c1917;
+      --muted: #78716c; --accent: #b45309; --accent-2: #92400e;
+      --soft: #ffedd5; --hero-from: #7c2d12; --hero-to: #b45309;
+      --font-d: Playfair Display, Georgia, serif; --font-b: Source Sans 3, Segoe UI, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-b); background: var(--bg); color: var(--ink); line-height: 1.55; }
+    a { color: inherit; text-decoration: none; }
+    /* Mobile-first: foto inteira + CTAs abaixo (nada por cima da logo) */
+    .hero {
+      min-height: 0;
+      background: var(--hero-from);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0;
+      position: relative;
+    }
+    .hero-photo-wrap { display: block; position: relative; width: 100%; line-height: 0; }
+    .hero-photo-mobile {
+      display: block; width: 100%; height: auto;
+      vertical-align: top; object-fit: contain; object-position: top center;
+    }
+    .hero-photo-wrap::after {
+      content: "";
+      position: absolute; left: 0; right: 0; bottom: 0;
+      height: 18%;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+      pointer-events: none;
+    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; width: 100%; }
+    .hero-copy {
+      padding: 1.6rem 1.5rem 2.2rem;
+      background: linear-gradient(160deg, var(--hero-from), var(--hero-to));
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.85rem 1.2rem; border-radius: 999px; font-weight: 700; border: none;
+    }
+    .btn-light { background: #fff; color: var(--accent-2); }
+    .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.45); color: #fff; }
+    .sub { max-width: 36ch; opacity: 0.95; font-size: 1.1rem; margin-bottom: 1.4rem; text-shadow: 0 1px 10px rgba(0,0,0,0.3); }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    section { padding: 3.5rem 0; }
+    .section-title { font-family: var(--font-d); font-size: clamp(1.8rem, 3vw, 2.4rem); letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .section-sub { color: var(--muted); margin-bottom: 1.6rem; max-width: 46ch; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center; }
+    .photo {
+      border-radius: 22px; min-height: 340px;
+      background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&amp;q=80') center/cover no-repeat;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    }
+    .list { display: grid; gap: 0.8rem; }
+    .item {
+      background: var(--surface); border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+      border-radius: 14px; padding: 0.95rem 1.1rem; font-weight: 600;
+    }
+    .item span { display: block; color: var(--muted); font-weight: 400; font-size: 0.9rem; margin-top: 0.2rem; }
+    .services { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.75rem; }
+    .svc {
+      background: var(--soft); color: var(--accent-2); border-radius: 14px;
+      padding: 1rem; font-weight: 700; text-align: center;
+    }
+    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .card {
+      background: var(--surface); border-radius: 16px; padding: 1.25rem;
+      border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+    }
+    .stars { color: #f59e0b; margin-bottom: 0.5rem; letter-spacing: 0.08em; }
+    .cta {
+      background: linear-gradient(120deg, var(--hero-from), var(--hero-to));
+      color: #fff; border-radius: 24px; padding: 2.2rem; text-align: center;
+    }
+    .cta h2 { font-family: var(--font-d); font-size: 2rem; margin-bottom: 0.5rem; }
+    footer { padding: 1.5rem 0 2.5rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
+    @media (max-width: 900px) {
+      .split, .reviews { grid-template-columns: 1fr; }
+      .hero-copy.wrap {
+        padding: 1.6rem 1.5rem 2.2rem;
+      }
+      .sub {
+        max-width: none;
+        font-size: 1rem;
+        line-height: 1.45;
+        margin-bottom: 1.15rem;
+        text-shadow: none;
+        padding-left: 0.15rem;
+        padding-right: 0.15rem;
+      }
+      .actions { gap: 0.65rem; }
+      .actions .btn { width: 100%; }
+      .services[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
+    }
+    @media (min-width: 901px) {
+      .hero {
+        min-height: 88vh;
+        padding: 1.5rem 0 3.5rem;
+        justify-content: flex-end;
+        background:
+          linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 35%, rgba(0,0,0,0.6) 100%),
+          linear-gradient(120deg, rgba(124,45,18,0.55), rgba(180,83,9,0.4)),
+          url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&amp;q=80') center top / cover no-repeat;
+      }
+      .hero-photo-wrap { display: none; }
+      .hero-copy {
+        padding-top: 2.5rem;
+        padding-bottom: 0.25rem;
+        background: transparent;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-photo-wrap">
+      <img class="hero-photo-mobile" src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&amp;q=80" alt="Cantina Montanari">
+    </div>
+    <div class="wrap hero-copy">
+      <p class="sub">Sabor, ambiente e boa experiência em salvador</p>
+      <div class="actions">
+        
+          <a class="btn btn-light" href="https://wa.me/5507133629530" target="_blank" rel="noopener">Faça sua reserva ou peça agora</a>
+        
+        
+          <a class="btn btn-outline" href="https://www.google.com/maps/place/Cantina+Montanari/data=!4m7!3m6!1s0x7161a3680a15f55:0xeab2db5233861aee!8m2!3d-12.9747098!4d-38.4211576!16s%2Fg%2F1tg6vx1n!19sChIJVV-hgDYaFgcR7hqGM1Lbsuo?authuser=0" target="_blank" rel="noopener">Ver no Maps</a>
+        
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="wrap split">
+      <div class="photo" role="img" aria-label="Ambiente"></div>
+      <div>
+        <h2 class="section-title">Por que escolher a gente</h2>
+        <p class="section-sub">Cardápio cuidado, atendimento atencioso e o ponto certo para suas refeições e encontros.</p>
+        <div class="list">
+          
+            <div class="item">✓ Ingredientes selecionados</div>
+          
+            <div class="item">✓ Atendimento rápido e cordial</div>
+          
+            <div class="item">✓ Ambiente ideal para família e amigos</div>
+          
+            <div class="item">✓ Localização conveniente</div>
+          
+          <div class="item">4.3★ no Google · 6679 avaliações<span>Reputação pública no Google</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <h2 class="section-title">Serviços</h2>
+      <p class="section-sub">Tudo o que você precisa, em um só lugar.</p>
+      <div class="services">
+        <div class="svc">Almoço e jantar</div><div class="svc">Pratos executivos</div><div class="svc">Opções para grupos</div><div class="svc">Ambiente climatizado</div><div class="svc">Delivery / retirada</div><div class="svc">Eventos e reservas</div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <h2 class="section-title">Depoimentos</h2>
+      <div class="reviews" style="margin-top:1.2rem;">
+        
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <p>“Estive no Cantina após algum tempo sem frequentar, aproveitei que dia de segunda eles tem uma promoção no valor do rodízio (que inclui Pizzas, massas e grelhados). O ambiente é amplo e encheu com o passar da noite ficand”</p>
+            <strong style="display:block;margin-top:0.8rem;">filipe vieira · Google</strong>
+          </article>
+        
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <p>“Estive no Cantina após algum tempo sem frequentar, aproveitei que dia de segunda eles tem uma promoção no valor do rodízio (que inclui Pizzas, massas e grelhados). O ambiente é amplo e encheu com o passar da noite ficand”</p>
+            <strong style="display:block;margin-top:0.8rem;">filipe vieira · Google</strong>
+          </article>
+        
+          <article class="card">
+            <div class="stars">★★★★★</div>
+            <p>“Fui no meu aniversário e me surpreendeu. Ambiente familiar e agradável, garçons educados, pizza deliciosa, massa fininha, o rodízio é bacana. Em relação as bebidas, tinha visto comentários dizendo que são caras mas eu ac”</p>
+            <strong style="display:block;margin-top:0.8rem;">Izabela Carvalho · Google</strong>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+
+  
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <h2 class="section-title">Fotos</h2>
+      <div class="services" style="margin-top:1rem;grid-template-columns:repeat(3,1fr);">
+        
+          <div class="svc" style="padding:0;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&amp;q=80" alt="Cantina Montanari" style="width:100%;height:140px;object-fit:cover;display:block;" loading="lazy">
+          </div>
+        
+          <div class="svc" style="padding:0;overflow:hidden;">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&amp;q=80" alt="Cantina Montanari" style="width:100%;height:140px;object-fit:cover;display:block;" loading="lazy">
+          </div>
+        
+      </div>
+    </div>
+  </section>
+  
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Faça sua reserva ou peça agora</h2>
+        <p style="opacity:0.9;margin-bottom:1.2rem;">Cantina Montanari · Av. Dom Eugênio Sales, s/n - Boca do Rio, Salvador - BA, 41706-670</p>
+        <div class="actions" style="justify-content:center;">
+          
+            <a class="btn btn-light" href="https://wa.me/5507133629530" target="_blank" rel="noopener">WhatsApp</a>
+          
+          
+            <a class="btn btn-outline" href="tel:07133629530">Ligar</a>
+          
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Cantina Montanari · (071) 3362-9530</footer>
+</body>
+</html>
