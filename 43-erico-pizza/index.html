@@ -23,8 +23,7 @@
       background:
         linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.15) 28%, rgba(0,0,0,0.55) 100%),
         linear-gradient(120deg, color-mix(in srgb, var(--hero-from) 70%, transparent), color-mix(in srgb, var(--hero-to) 45%, transparent)),
-        url('assets/foto-01.jpg') center top / cover no-repeat;
-      background-position: center top;
+        url('assets/foto-01.jpg') center center / cover no-repeat;
       color: #fff;
       display: flex;
       flex-direction: column;
@@ -32,6 +31,7 @@
       padding: 1.5rem 0 3.5rem;
       position: relative;
     }
+    .hero-photo-mobile { display: none; width: 100%; height: auto; vertical-align: middle; }
     .wrap { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; width: 100%; }
     .top {
       position: relative;
@@ -93,8 +93,31 @@
     footer { padding: 1.5rem 0 2.5rem; text-align: center; color: var(--muted); font-size: 0.8rem; }
     @media (max-width: 900px) {
       .split, .reviews { grid-template-columns: 1fr; }
-      .hero { min-height: 78vh; }
-      h1 { max-width: none; }
+      /* No mobile a foto do Maps vai inteira (logo/texto da fachada não cortam) */
+      .hero {
+        min-height: 0;
+        padding: 0;
+        background: var(--hero-from);
+        justify-content: flex-start;
+      }
+      .hero-photo-mobile { display: block; }
+      .top {
+        position: absolute; top: 0; left: 0; right: 0;
+        padding: 0.9rem 1rem;
+        color: #fff;
+      }
+      .top .brand, .top .btn { text-shadow: 0 1px 10px rgba(0,0,0,0.55); }
+      .top .btn-light { box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+      .hero-copy {
+        padding: 1.35rem 0 2rem;
+        background: linear-gradient(160deg, var(--hero-from), var(--hero-to));
+      }
+      h1 { max-width: none; font-size: clamp(2rem, 9vw, 2.8rem); }
+      .sub { max-width: none; font-size: 1rem; }
+      .actions .btn { width: 100%; }
+      .services[style*="grid-template-columns:repeat(3"] {
+        grid-template-columns: 1fr 1fr !important;
+      }
     }
   </style>
 </head>
@@ -106,6 +129,7 @@
         <a class="btn btn-light" href="https://wa.me/55071981735798" target="_blank" rel="noopener">Falar agora</a>
       
     </div>
+    <img class="hero-photo-mobile" src="assets/foto-01.jpg" alt="Érico Pizza" width="1200" height="800">
     <div class="wrap hero-copy">
       <div class="eyebrow">Pizzaria · salvador</div>
       <h1>Érico Pizza</h1>
@@ -194,10 +218,6 @@
         
           <div class="svc" style="padding:0;overflow:hidden;">
             <img src="assets/foto-02.jpg" alt="Érico Pizza" style="width:100%;height:140px;object-fit:cover;display:block;" loading="lazy">
-          </div>
-        
-          <div class="svc" style="padding:0;overflow:hidden;">
-            <img src="assets/foto-03.jpg" alt="Érico Pizza" style="width:100%;height:140px;object-fit:cover;display:block;" loading="lazy">
           </div>
         
       </div>
